@@ -46,28 +46,28 @@ module modulo_divider (
     
     assign next_divided_clk = divided_clk ^ terminal_count;
     
-    d_flip_flop dff0 (
+    d_flip_flop_sync dff0 (
         .clk(clk),
         .reset(reset),
         .d(next_state[0]),
         .q(state[0])
     );
     
-    d_flip_flop dff1 (
+    d_flip_flop_sync dff1 (
         .clk(clk),
         .reset(reset),
         .d(next_state[1]),
         .q(state[1])
     );
     
-    d_flip_flop dff2 (
+    d_flip_flop_sync dff2 (
         .clk(clk),
         .reset(reset),
         .d(next_state[2]),
         .q(state[2])
     );
     
-    d_flip_flop dff_out (
+    d_flip_flop_sync dff_out (
         .clk(clk),
         .reset(reset),
         .d(next_divided_clk),
